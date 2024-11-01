@@ -27,7 +27,7 @@ const Head = () => {
   }, [searchQuery]);
 
   const getSearchSugestions = async () => {
-    console.log("api call"+ searchQuery)
+    
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     setSuggestions(json[1]);
@@ -38,6 +38,11 @@ const Head = () => {
       })
     );
   };
+
+  const handleSuggestionClick = (suggestion) => {
+    setSearchQuery(suggestion);
+    setShowSuggestions(false);
+  }
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
@@ -66,7 +71,7 @@ const Head = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
+            onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
           />
           <button className="px-5 p-1 bg-gray-200 rounded-r-full border border-gray-400 border-l-0">
             🔍
@@ -76,7 +81,7 @@ const Head = () => {
           <div className="fixed bg-white py-2 px-2 w-[35rem] shadow-lg rounded-lg z-10 border border-gray-50">
             <ul>
               {suggestions.map((s) => (
-                <li key={s} className="py-2 shadow-sm hover:bg-gray-200">
+                <li key={s} className="py-2 shadow-sm hover:bg-gray-200" onClick={ ()=> handleSuggestionClick(s)}>
                   🔍 {s}
                 </li>
               ))}
