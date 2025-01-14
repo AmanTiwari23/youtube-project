@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <div className="p-6 m-4 shadow-lg ">
       <ul>
-        <li> <Link to="/"> Home</Link></li>
+        <li> <Link to="/">Home</Link></li>
         <li>Shorts</li>
         <li>Videos</li>
         <li>Live</li>
