@@ -40,14 +40,15 @@ const LiveChat = () => {
               message: liveMessage,
             })
            );
+           setLiveMessage("")
     }}>
-      <input type="text" className="px-2 w-96" value={liveMessage} onChange={(e)=>{
+      <input type="text" className="px-2 w-10/12 bg-blue-100 " value={liveMessage} onChange={(e)=>{
         setLiveMessage(e.target.value);
       }}/>
-      <button className="px-2 mx-1 bg-red-400">Send</button>
+      <button className="px-2 mx-2 bg-green-100">Send</button>
     </form>
     </>
   );
 };
 
-export default LiveChat;
+export default LiveChat; 

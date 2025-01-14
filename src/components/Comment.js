@@ -3,50 +3,50 @@ import React from "react";
 export const commentsData = [
   {
     name: "aman",
-    text: "nice pic dear",
+    text: "this is a comment",
     replies: [
       {
         name: "aman",
-        text: "nice pic dear",
+        text: "this is a comment",
         replies: [
           {
             name: "aman",
-            text: "nice pic dear",
+            text: "this is a comment",
             replies: [
               {
                 name: "aman",
-                text: "nice pic dear",
+                text: "this is a comment",
                 replies: [],
               },
             ],
           },
           {
             name: "aman",
-            text: "nice pic dear",
+            text: "this is a comment",
             replies: [],
           },
         ],
       },
       {
         name: "aman",
-        text: "nice pic dear",
+        text: "this is a comment",
         replies: [],
       },
     ],
   },
   {
     name: "aman",
-    text: "nice pic dear",
+    text: "this is a comment",
     replies: [],
   },
   {
     name: "aman",
-    text: "nice pic dear",
+    text: "this is comment",
     replies: [],
   },
   {
     name: "aman",
-    text: "nice pic dear",
+    text: "this is a comment",
     replies: [],
   },
 ];
