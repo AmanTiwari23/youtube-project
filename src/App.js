@@ -1,36 +1,47 @@
-import { Provider } from "react-redux";
-import Body from "./components/Body";
-import Head from "./components/Head";
-import store from "./utils/store";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainContainer from "./components/MainContainer";
-import WatchPage from "./components/WatchPage";
-
+import React from "react";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Header from "./Components/Header";
+import Watch from "./Components/Watch";
+import Body from "./Pages/Body";
+import MainCtn from "./Components/MainCtn";
+import Results from "./Components/Results";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Body />,
+    element: (
+      <>
+        <Header />
+        <Body />
+      </>
+    ),
     children: [
       {
         path: "/",
-        element: <MainContainer />,
+        element: <MainCtn />,
       },
       {
-        path: "watch", 
-        element: <WatchPage />,
+        path: "/watch",
+        element: <Watch />,
+      },
+      {
+        path: "/results/",
+        element: <Results />,
       },
     ],
   },
 ]);
 function App() {
+  // createBrowserRouter
+
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Head />
-        <RouterProvider router={appRouter} />
-      </div>
-    </Provider>
+    <div className="bg-[#0f0f0f]  h-screen w-screen">
+      <RouterProvider router={appRouter} />
+    </div>
   );
 }
 
